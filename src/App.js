@@ -27,37 +27,27 @@ class App extends Component {
     const cond1 = (i, j) => {
       return this.reversi[i][j] === '.';
     };
-    // const cond2 = (i, j) => {
-    //   const nextX = (i, j) => {
-    //     let m = i - 2;
-    //     while (m >= 0) {
-    //       if (this.reversi[m][j] === 'X') break;
-    //       m--;
-    //     }
-    //     return m;
-    //   };
-    //   console.log(nextX(i, j));
 
-    //   let legit = true;
-    //   if (nextX(i, j) < 0) {
-    //     legit = false;
-    //   }
-    //   for (let m = nextX(i, j) + 1; (m = i - 1); m++) {
-    //     if (this.reversi[m][j] !== 'O') {
-    //       legit = false;
-    //     }
-    //   }
-
-    //   return legit;
-    // };
-
-    const cond3 = (i,j) => {
+    const cond2 = (i, j) => {
       let legit = true;
-      
-    }
+      console.log('i = ' + i);
+      if (i > 1 && this.reversi[i - 1][j] === 'O') {
+        for (let a = i - 2; a >= 0; a--) {
+          if (legit && this.reversi[a][j] === 'X') {
+            for (let b = a + 1; b < i; b++) {
+              this.reversi[b][j] = 'X';
+            }
+            return true;
+          }
+          if (this.reversi[a][j] !== 'O') {
+            legit = false;
+          }
+        }
+      }
+      return false;
+    };
 
-    // return cond1(i, j) && cond2(i, j);
-    return cond1(i, j);
+    return cond1(i, j) && cond2(i, j);
   };
 
   nextMove = (i, j) => {
@@ -66,7 +56,6 @@ class App extends Component {
 
   clickHandler = (i, j) => {
     if (this.legitMove(i, j)) {
-      // if (true) {
       this.nextMove(i, j);
       this.forceUpdate();
     }
