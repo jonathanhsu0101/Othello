@@ -24,11 +24,11 @@ class App extends Component {
   };
 
   legitMove = (i, j) => {
-    const cond1 = (i, j) => {
+    const cond0 = (i, j) => {
       return this.reversi[i][j] === '.';
     };
 
-    const cond2 = (i, j) => {
+    const cond1 = (i, j) => {
       let legit = true;
       console.log('i = ' + i);
       if (i > 1 && this.reversi[i - 1][j] === 'O') {
@@ -47,7 +47,8 @@ class App extends Component {
       return false;
     };
 
-    return cond1(i, j) && cond2(i, j);
+    return cond0(i, j) && cond1(i, j);
+    // return cond0(i, j) && (cond1(i, j) || cond2(i,j) || cond3(i,j) || cond4(i,j) || cond5(i,j) || cond6(i,j) || cond7(i,j) || cond8(i,j);
   };
 
   nextMove = (i, j) => {
