@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <header style={{ color: 'blue', fontSize: '100px' }}>
-          R e v e r s i
+          O t h e l l o
         </header>
         <div>{this.createTable()}</div>
       </div>
