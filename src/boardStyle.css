@@ -1,0 +1,9 @@
+.boardStyle {
+  font-family: monospace;
+  font-size: 40px;
+  font-weight: bold;
+  border: 1px solid;
+  padding: 0 10px;
+  cursor: pointer;
+  width: 20px;
+}
