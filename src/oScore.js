@@ -145,6 +145,22 @@ const oScore = (ij, reversi) => {
     return 0;
   };
 
+  // Gold corner
+  const cond9 = (i, j) => {
+    if ((i === 0 || i === 7) && (j === 0 || j === 7)) {
+      return 8;
+    }
+    return 0;
+  };
+
+  // Gold corner
+  const cond10 = (i, j) => {
+    if (i === 0 || i === 7 || j === 0 || j === 7) {
+      return 4;
+    }
+    return 0;
+  };
+
   let oScore =
     cond1(i, j) +
     cond2(i, j) +
@@ -153,7 +169,9 @@ const oScore = (ij, reversi) => {
     cond5(i, j) +
     cond6(i, j) +
     cond7(i, j) +
-    cond8(i, j);
+    cond8(i, j) +
+    cond9(i, j) +
+    cond10(i, j);
   return oScore;
 };
 
