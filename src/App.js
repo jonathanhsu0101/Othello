@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import reversiInit from './reversiInit';
-import './boardStyle.css';
-import './passStyle.css';
-import xMove from './xMove';
-import xLegitMove from './xLegitMove';
-import endGame from './endGame';
-import countX from './countX';
-import countO from './countO';
-import nextOMove from './nextOMove';
+import xMove from './X/xMove';
+import xLegitMove from './X/xLegitMove';
+import nextOMove from './O/nextOMove';
+import Board from './Board/Board';
 
 class App extends Component {
   reversi = reversiInit;
@@ -34,56 +30,14 @@ class App extends Component {
         <header style={{ color: 'blue', fontSize: '100px' }}>
           O t h e l l o
         </header>
-        <div>{this.createTable()}</div>
+        <Board
+          reversi={this.reversi}
+          click={this.clickHandler}
+          passClick={this.passHandler}
+        />
       </div>
     );
   }
-
-  createTable = () => {
-    let table = [];
-    for (let i = 0; i < 8; i++) {
-      let children = [];
-      for (let j = 0; j < 8; j++) {
-        children.push(
-          <span
-            onClick={this.clickHandler.bind(this, i, j)}
-            className="boardStyle"
-          >
-            {this.reversi[i][j]}
-          </span>
-        );
-      }
-      table.push(<div>{children}</div>);
-    }
-    if (endGame(this.reversi)) {
-      let a = countX(this.reversi);
-      let b = countO(this.reversi);
-      if (a === b) {
-        table.push(
-          <div style={{ color: 'green', fontSize: '60px' }}>It's a tie!</div>
-        );
-        return table;
-      }
-      if (a < b) {
-        table.push(
-          <div style={{ color: 'green', fontSize: '60px' }}>Computer wins!</div>
-        );
-        return table;
-      }
-      if (a > b) {
-        table.push(
-          <div style={{ color: 'green', fontSize: '60px' }}>You win!</div>
-        );
-        return table;
-      }
-    }
-    table.push(
-      <button onClick={this.passHandler} className="passStyle">
-        Pass
-      </button>
-    );
-    return table;
-  };
 }
 
 export default App;
