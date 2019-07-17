@@ -1,7 +1,7 @@
 import React from 'react';
-import endGame from '../endGame';
-import countX from '../X/countX';
-import countO from '../O/countO';
+import endGame from './endGame';
+import countX from './countX';
+import countO from './countO';
 import './boardStyle.css';
 import './passStyle.css';
 

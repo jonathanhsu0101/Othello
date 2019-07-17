@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import reversiInit from './reversiInit';
-import xMove from './X/xMove';
+
+import reversiInit from './Board/reversiInit';
 import xLegitMove from './X/xLegitMove';
+import xMove from './X/xMove';
 import nextOMove from './O/nextOMove';
 import Board from './Board/Board';
 
