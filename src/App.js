@@ -8,21 +8,25 @@ import nextOMove from './O/nextOMove';
 import Board from './Board/Board';
 
 class App extends Component {
-  reversi = reversiInit;
+  state = { reversi: reversiInit };
+  reversi = [...this.state.reversi];
 
   clickHandler = (i, j) => {
     if (xLegitMove(i, j, this.reversi)) {
       this.reversi = xMove(i, j, this.reversi);
       this.reversi[8] = false;
-      this.reversi = nextOMove(this.reversi);
-      this.forceUpdate();
+      this.setState({ reversi: this.reversi });
+      setTimeout(() => {
+        this.reversi = nextOMove(this.reversi);
+        this.setState({ reversi: this.reversi });
+      }, 2000);
     }
   };
 
   passHandler = () => {
     this.reversi[8] = true;
     this.reversi = nextOMove(this.reversi);
-    this.forceUpdate();
+    this.setState({ reversi: this.reversi });
   };
 
   render() {
@@ -32,7 +36,7 @@ class App extends Component {
           O t h e l l o
         </header>
         <Board
-          reversi={this.reversi}
+          reversi={this.state.reversi}
           click={this.clickHandler}
           passClick={this.passHandler}
         />
