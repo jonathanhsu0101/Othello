@@ -3,7 +3,9 @@ This project was created with React.
 # How to install
 
 $ git clone https://github.com/jonathanhsu0101/Othello.git
+
 $ cd Othello
+
 $ npm install
 
 # How to run the app in the development mode
