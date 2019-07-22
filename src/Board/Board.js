@@ -27,33 +27,31 @@ const board = props => {
     let b = countO(props.reversi);
     if (a === b) {
       table.push(
-        <div style={{ color: 'green', fontSize: '60px' }}>
-          It's a tie!
-        </div>
+        <div style={{ color: 'green', fontSize: '60px' }}>It's a tie!</div>
       );
       return table;
     }
     if (a < b) {
       table.push(
-        <div style={{ color: 'green', fontSize: '60px' }}>
-          Computer wins!
-        </div>
+        <div style={{ color: 'green', fontSize: '60px' }}>Computer wins!</div>
       );
       return table;
     }
     if (a > b) {
       table.push(
-        <div style={{ color: 'green', fontSize: '60px' }}>
-          You win!
-        </div>
+        <div style={{ color: 'green', fontSize: '60px' }}>You win!</div>
       );
       return table;
     }
   }
   table.push(
-    <button onClick={props.passClick} className="passStyle">
-      Pass
-    </button>
+    <div>
+      <span style={{ fontSize: '35px' }}>X: {countX(props.reversi)}</span>
+      <button onClick={props.passClick} className="passStyle">
+        Pass
+      </button>
+      <span style={{ fontSize: '35px' }}>O: {countO(props.reversi)}</span>
+    </div>
   );
   return table;
 };

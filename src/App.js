@@ -24,15 +24,17 @@ class App extends Component {
   };
 
   passHandler = () => {
-    this.reversi[8] = true;
-    this.reversi = nextOMove(this.reversi);
-    this.setState({ reversi: this.reversi });
+    setTimeout(() => {
+      this.reversi[8] = true;
+      this.reversi = nextOMove(this.reversi);
+      this.setState({ reversi: this.reversi });
+    }, 2000);
   };
 
   render() {
     return (
       <div className="App">
-        <header style={{ color: 'blue', fontSize: '100px' }}>
+        <header style={{ color: '', fontFamily: 'Verdana', fontSize: '100px' }}>
           O t h e l l o
         </header>
         <Board
