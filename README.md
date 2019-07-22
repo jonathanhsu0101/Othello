@@ -2,15 +2,15 @@ This project was created with React.
 
 # How to install
 
-$ git clone https://github.com/jonathanhsu0101/Othello.git
+\$ git clone https://github.com/jonathanhsu0101/Othello.git
 
-$ cd Othello
+\$ cd Othello
 
-$ npm install
+\$ npm install
 
 # How to run the app in the development mode
 
-$ npm start
+\$ npm start
 
 Open http://localhost:3000 to view it in the browser.
 
@@ -29,5 +29,7 @@ The historical version of Reversi starts with an empty board, and the first two 
 For the specific game of Othello (differing from the historical Reversi), the rules state that the game begins with four disks placed in a square in the middle of the grid, two facing white side up, two pieces with the dark side up, with same-colored disks on a diagonal with each other. Convention has initial board position such that the disks with dark side up are to the north-east and south-west (from both players' perspectives), though this is only marginally meaningful to play (where opening memorization is an issue, some players may benefit from consistency on this). If the disks with dark side up are to the north-west and south-east, the board may be rotated by 90° clockwise or counterclockwise. The dark player moves first.
 
 More information:
+
 https://www.wikiwand.com/en/Reversi
+
 https://www.worldothello.org/
