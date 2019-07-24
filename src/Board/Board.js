@@ -10,6 +10,17 @@ const board = props => {
   for (let i = 0; i < 8; i++) {
     let children = [];
     for (let j = 0; j < 8; j++) {
+      if (props.reversi[i + 10][j]) {
+        children.push(
+        <span
+          key={i * 8 + j}
+          onClick={props.click.bind(this, i, j)}
+          className="boardStyleGreen"
+        >
+          {props.reversi[i][j]}
+        </span>
+      );
+      }else{
       children.push(
         <span
           key={i * 8 + j}
@@ -18,7 +29,7 @@ const board = props => {
         >
           {props.reversi[i][j]}
         </span>
-      );
+      );}
     }
     table.push(<div>{children}</div>);
   }

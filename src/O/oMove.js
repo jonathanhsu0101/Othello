@@ -7,6 +7,7 @@ const oMove = (i, j, reversi) => {
         if (legit && reversi[a][j] === 'O') {
           for (let b = a + 1; b < i; b++) {
             reversi[b][j] = 'O';
+            reversi[b + 10][j] = 1;
           }
           return reversi;
         }
@@ -26,6 +27,7 @@ const oMove = (i, j, reversi) => {
         if (legit && reversi[a][j] === 'O') {
           for (let b = a - 1; b > i; b--) {
             reversi[b][j] = 'O';
+            reversi[b + 10][j] = 1;
           }
           return reversi;
         }
@@ -45,6 +47,7 @@ const oMove = (i, j, reversi) => {
         if (legit && reversi[i][a] === 'O') {
           for (let b = a - 1; b > j; b--) {
             reversi[i][b] = 'O';
+            reversi[i + 10][b] = 1;
           }
           return reversi;
         }
@@ -64,6 +67,7 @@ const oMove = (i, j, reversi) => {
         if (legit && reversi[i][a] === 'O') {
           for (let b = a + 1; b < j; b++) {
             reversi[i][b] = 'O';
+            reversi[i + 10][b] = 1;
           }
           return reversi;
         }
@@ -89,6 +93,7 @@ const oMove = (i, j, reversi) => {
             a--;
             b--;
             reversi[a][b] = 'O';
+            reversi[a + 10][b] = 1;
           }
           return reversi;
         }
@@ -114,6 +119,7 @@ const oMove = (i, j, reversi) => {
             a++;
             b++;
             reversi[a][b] = 'O';
+            reversi[a + 10][b] = 1;
           }
           return reversi;
         }
@@ -139,6 +145,7 @@ const oMove = (i, j, reversi) => {
             a++;
             b--;
             reversi[a][b] = 'O';
+            reversi[a + 10][b] = 1;
           }
           return reversi;
         }
@@ -164,6 +171,7 @@ const oMove = (i, j, reversi) => {
             a--;
             b++;
             reversi[a][b] = 'O';
+            reversi[a + 10][b] = 1;
           }
           return reversi;
         }
@@ -176,6 +184,7 @@ const oMove = (i, j, reversi) => {
   };
 
   reversi[i][j] = 'O';
+  reversi[i + 10][j] = 1;
   reversi = cond1(i, j, reversi);
   reversi = cond2(i, j, reversi);
   reversi = cond3(i, j, reversi);

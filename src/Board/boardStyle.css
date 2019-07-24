@@ -1,9 +1,21 @@
 .boardStyle {
   background-color: rgba(253, 240, 165, 0.863);
   font-family: monospace;
+  color: black;
   font-size: 40px;
   font-weight: bold;
-  border: 1px solid;
+  border: 1px solid black;
+  padding: 0 10px;
+  cursor: pointer;
+  width: 20px;
+}
+.boardStyleGreen {
+  background-color: rgba(253, 240, 165, 0.863);
+  font-family: monospace;
+  color: green;
+  font-size: 40px;
+  font-weight: bold;
+  border: 1px solid black;
   padding: 0 10px;
   cursor: pointer;
   width: 20px;
