@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header style={{ color: '', fontFamily: 'Verdana', fontSize: '100px' }}>
+        <header style={{ fontFamily: 'Verdana', fontSize: '100px' }}>
           O t h e l l o
         </header>
         <Board
