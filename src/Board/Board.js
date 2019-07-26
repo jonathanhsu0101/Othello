@@ -8,10 +8,10 @@ import './passStyle.css';
 const board = props => {
   let table = [];
   for (let i = 0; i < 8; i++) {
-    let children = [];
+    let line = [];
     for (let j = 0; j < 8; j++) {
       if (props.reversi[i + 10][j]) {
-        children.push(
+        line.push(
         <span
           key={i * 8 + j}
           onClick={props.click.bind(this, i, j)}
@@ -21,7 +21,7 @@ const board = props => {
         </span>
       );
       }else{
-      children.push(
+      line.push(
         <span
           key={i * 8 + j}
           onClick={props.click.bind(this, i, j)}
@@ -31,7 +31,7 @@ const board = props => {
         </span>
       );}
     }
-    table.push(<div>{children}</div>);
+    table.push(<div>{line}</div>);
   }
   if (endGame(props.reversi)) {
     let a = countX(props.reversi);
