@@ -1,20 +1,28 @@
+# What's this?
+
+This is a board game called "Othello" played in browser.
+
 This project was created with React.
 
 # How to install
 
-\$ git clone https://github.com/jonathanhsu0101/Othello.git
+$ git clone https://github.com/jonathanhsu0101/Othello.git
 
-\$ cd Othello
+$ cd Othello
 
-\$ npm install
+$ npm install
 
-# How to run the app in the development mode
+# How to run
 
-\$ npm start
+$ npm start
 
 Open http://localhost:3000 to view it in the browser.
 
 # How to play
+
+You go first. You play "X". For every move, you must take out "O"s by clamping them from both ends with "X"s vertically, horizontally, or diagonally. If you can not take out any "O"s, you must click "Pass".
+
+# Othello in Wikipedia
 
 Othello (Reversi) is a strategy board game for two players, played on an 8×8 uncheckered board. There are sixty-four identical game pieces called disks (often spelled "discs"), which are light on one side and dark on the other. Players take turns placing disks on the board with their assigned color facing up. During a play, any disks of the opponent's color that are in a straight line and bounded by the disk just placed and another disk of the current player's color are turned over to the current player's color.
 
