@@ -1,3 +1,7 @@
+# What does it look like:
+
+https://github.com/jonathanhsu0101/Othello/blob/master/Capture.PNG
+
 # What's this?
 
 This is a board game called "Othello" played in browser.
